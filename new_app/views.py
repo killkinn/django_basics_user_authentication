@@ -56,6 +56,9 @@ def signin(request):
         if user is not None:
             auth.login(request,user)
             return redirect('home')
+        else:
+            messages.info(request,"invaild user name or password")
+            return redirect("signin")
 
 
     return render(request,"login.html") 
@@ -63,6 +66,7 @@ def logout(request):
     auth.logout(request)
     messages.info(request,"you are signed out")
     return redirect("signin")
+
     
 
 
