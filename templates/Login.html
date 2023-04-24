@@ -1,0 +1,48 @@
+<style>
+    body {
+        background-color: pink;
+        /* display: flex; */
+        /* justify-content: center; */
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .box {
+        height: 600px;
+        width: 400px;
+        background-color: whitesmoke;
+        /* display: flex; */
+        padding-left: 150px;
+        padding-top: 50px;
+        font-size: 25px;
+
+
+    }
+</style>
+
+<h1>FACEBOOK SIGNUP</h1>
+<br>
+<br>
+<form action="{%url 'signin'%}" method="POST">
+    {% csrf_token %}
+
+    <div class="box">
+
+        <label for="">user name</label>
+        <input name="username" type="text" placeholder="email address or phone number">
+        <br>
+        <br>
+        <label for="">password:</label>
+        <input name="password" type="password" placeholder="password">
+        <br>
+        <br>
+
+        <button type="submit">Log in</button>
+        <br>
+        <br>
+        <p>Don't have an account?<a href="{%url 'signup'%}">Register</a></p>
+
+    </div>
+</form>
